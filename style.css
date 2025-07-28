@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: radial-gradient(circle, #0f0c29, #302b63, #24243e);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clock {
+  position: relative;
+  width: 90vmin;
+  height: 90vmin;
+}
+
+.ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  transition: transform 0.8s ease;
+  pointer-events: none;
+}
+
+.ring div {
+  position: absolute;
+  transform-origin: center;
+  color: #ffffffcc;
+  font-size: 0.8vmin;
+  opacity: 0.4;
+  transition: all 0.3s ease;
+}
+
+/* 🔹 Highlight the current time/date values */
+.ring div.active {
+  color: #00ffea;
+  font-weight: bold;
+  opacity: 1;
+  text-shadow: 0 0 10px #00ffe0;
+  transform: scale(1.4);
+}
+
+/* 🔹 Ring sizes (concentric layout) */
+.year-ring    { width: 1vmin; height: 1vmin; }
+.month-ring   { width: 30vmin; height: 30vmin; }
+.day-ring     { width: 40vmin; height: 40vmin; }
+.date-ring    { width: 50vmin; height: 50vmin; }
+.hour-ring    { width: 60vmin; height: 60vmin; }
+.minute-ring  { width: 70vmin; height: 70vmin; }
+.second-ring  { width: 80vmin; height: 80vmin; }
+
+/* 🔸 Font size overrides for better visibility */
+.year-ring div    { font-size: 3.5vmin; }
+.month-ring div   { font-size: 2.5vmin; }
+.day-ring div     { font-size: 2.5vmin; }
+.date-ring div    { font-size: 2.5vmin; }
+.hour-ring div    { font-size: 2.1vmin; }
+.minute-ring div  { font-size: 2.1vmin; }
+.second-ring div  { font-size: 2.1vmin; }
